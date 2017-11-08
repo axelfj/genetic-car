@@ -1,5 +1,5 @@
-# P1-Anal
-Primer proyecto-Análisis De Algoritmos
+# P2-Anal
+Segundo proyecto-Análisis De Algoritmos
 
 ## Creditos
 
@@ -11,7 +11,7 @@ Lopez Saborio Iván Móises.
 
 ## Descripción #
 
-Aplicación que permite el registro de usuarios sobre avistamiento de aves en Costa Rica.
+Software que utilizará programación genética para hacer que un automóvil se dirija de un punto A a un punto B
 
 ## Instalación
 
