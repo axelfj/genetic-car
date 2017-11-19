@@ -1,6 +1,4 @@
-
-class Wheel
-{
+class Wheel{
   // Attributes //
   private int ratio;
   private PVector center;
