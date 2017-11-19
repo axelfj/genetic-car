@@ -1,7 +1,5 @@
-class Wheel{
-  private int ratio;
+class wheel{
+  private int radio;
   private PVector center;
- 
- 
-  public Wheel(int ratio, PVector center){}
+  
 }

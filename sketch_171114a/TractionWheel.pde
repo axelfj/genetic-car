@@ -1,3 +1,0 @@
-class TractionWheel extends Wheel{
-  
-}    
