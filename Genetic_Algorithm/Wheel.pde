@@ -4,6 +4,7 @@ class Wheel{
                           ///////////////
   private int ratio, minRatio, maxRatio;
   private PVector center;
+  private PImage wheel;
   
   
                           ///////////////
@@ -13,5 +14,5 @@ class Wheel{
   Wheel(int ratio, PVector center){
     this.ratio = ratio;
     this.center = center;
-  }                          
+  }
 }
