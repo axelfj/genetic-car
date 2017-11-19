@@ -1,17 +1,14 @@
-
 class CarBody
 {
   // Attributes //
-  private PVector pos;
-  private float widthBody;
-  private float heightBody;
+  PVector pos;
+  private float widthBody, heightBody;
+  
   
   
   // Methods //
-  CarBody(PVector position, float widthBody, float heightBody){
+  CarBody(float widthBody, float heightBody, PImage image){
     this.pos = randomPoint();
-    this.widthBody = widthBody;
-    this.heightBody = heightBody;
   }
   
   PVector randomPoint()
@@ -21,4 +18,5 @@ class CarBody
     PVector position = new PVector(x, y);
     return position;
   }
+  
 }
