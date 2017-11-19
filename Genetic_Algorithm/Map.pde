@@ -1,5 +1,6 @@
-class Map{
-  // Attributes //
+
+class map
+{
   private int distance;
   
 }

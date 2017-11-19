@@ -1,12 +1,15 @@
-class CarBody{
+
+class CarBody
+{
   // Attributes //
-  private PVector position;
+  private PVector pos;
   private float widthBody;
   private float heightBody;
   
+  
   // Methods //
   CarBody(PVector position, float widthBody, float heightBody){
-    this.position = randomPoint();
+    this.pos = randomPoint();
     this.widthBody = widthBody;
     this.heightBody = heightBody;
   }
