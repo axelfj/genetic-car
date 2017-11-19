@@ -1,20 +1,16 @@
-class CarDNA
-{
-  // Attributes
-  private PVector firstWheelPos, secondWheelPos;
-  private float carHeight, carWidth;
+class CarDNA{
+                          ///////////////
+                          // Attributes//
+                          ///////////////
+  private CarBody body;
+  private PVector firstWheelPos, secondWheelPos;  
   private Wheel firstWheel, secondWheel;
   private int fitness;
-  private CarBody body;
+  private float chooseWheel;
  
-  // Methods  
-  CarDNA(PVector firstWheelPos, PVector secondWheelPos, float carHeight, float carWidth)
-  {
-    //firstWheel = new Wheel();
-    
-    this.firstWheelPos = firstWheelPos;
-    this.secondWheelPos = secondWheelPos;
-    this.carHeight = carHeight;
-    this.carWidth = carWidth;
-  }
+ 
+                           ///////////////
+                          // METHODS //
+                          ///////////////
+  CarDNA(){}                      
 }
