@@ -41,9 +41,7 @@ void setup() {
   algorithm = false;
   box2d = new Box2DProcessing(this);
   box2d.createWorld();
-  iterator = 0;
-  iterPopulation = 20;
-  population = new ArrayList(iterPopulation);
+  createPopulation();
 }
 
 void draw(){
@@ -59,17 +57,15 @@ void draw(){
   if (algorithm == true){
     surface.display();
     surface.makeBody();
-    
+    population.get(0);
   }
 }
-
-void update(){}
 
 
 void initConfiguration(){
   PFont font = createFont("Arial", 25);
   control = new ControlP5(this);
-  controlDistance = control.addTextfield("Distance")
+  controlDistance = control.addTextfield("Distance (KM)")
     .setPosition(width-250, height-400)
     .setSize(200, 50)
     .setFont(font)
@@ -100,7 +96,7 @@ void begin(){
   distance = int(controlDistance.getText());
   generations = int(controlGenerations.getText());
   if (distance > 0 || generations > 0){
-    control.get("Distance").hide();
+    control.get("Distance (KM)").hide();
     control.get("Generations").hide();
     control.get("Continue").hide();
    
@@ -115,6 +111,8 @@ void begin(){
 
 
 void createPopulation(){
+  iterPopulation = 20;
+  population = new ArrayList(iterPopulation);
   for (int i = 0; i < iterPopulation; i++){
     Car carry = new Car(this.generations);
     population.add(carry);

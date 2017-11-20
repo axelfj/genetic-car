@@ -68,4 +68,6 @@ class Car {
     return flipped;
   }
 
+
+  void display(){}
 }

@@ -12,8 +12,8 @@ class CarBody{
   CarBody(PVector pos, float w, float h){
     this.widthBody = w;
     this.heightBody = h;
-    BodyDef bd2=new BodyDef();
-    bd2.bullet=true;
+    BodyDef bd2 = new BodyDef();
+    //bd2.bullet=true;
     bd2.position.set(box2d.coordPixelsToWorld(new Vec2(40,150)));
     bd2.type = BodyType.STATIC;
     
