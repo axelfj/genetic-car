@@ -1,16 +1,18 @@
 class TractionWheel extends Wheel{
   
-                            ///////////////
-                          // Attributes//
-                          ///////////////
-  private int strength;
+                          //////////////
+                          //Attributes//
+                          //////////////
+  private float strength;
 
 
                           ///////////////
-                          // METHODS //
+                          //  METHODS  //
                           ///////////////
                           
-  TractionWheel(int ratio, PVector center){
-    super(ratio,center);
+  TractionWheel(PVector center){
+    super(center);
+    this.strength = super.ratio / 2;
+    
   }
 }

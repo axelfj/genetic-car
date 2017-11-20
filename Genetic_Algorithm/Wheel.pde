@@ -2,7 +2,7 @@ class Wheel{
                           ///////////////
                           // Attributes//
                           ///////////////
-  private int ratio, minRatio, maxRatio;
+  private float ratio, minRatio, maxRatio;
   private PVector center;
   private PImage wheel;
   
@@ -11,8 +11,14 @@ class Wheel{
                           // METHODS //
                           ///////////////
                           
-  Wheel(int ratio, PVector center){
-    this.ratio = ratio;
+  Wheel(PVector Center){
+    minRatio = 10;
+    maxRatio = 100;
     this.center = center;
+    this.ratio = random(minRatio, maxRatio);
+  }
+  
+  PVector getPos(){
+    return center;
   }
 }

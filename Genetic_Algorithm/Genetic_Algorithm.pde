@@ -17,38 +17,54 @@ import controlP5.*;
                               // Attributes //
                               ////////////////
 
+Box2DProcessing box2d;
+Body body;
 ControlP5 control;
 Car carry;
 static Map surface;
-PImage background, bodyCar, firstWheel, secondWheel;
+PImage firstImage, bodyCar, firstWheel, secondWheel, background;
 boolean algorithm;
-Textfield controlDistance, controlGenerations;
-int distance, generations;
+Textfield controlDistance, controlGenerations, getBoolean;
+Button b;
+ArrayList<Car> population;
+int distance, generations, iterator, iterPopulation;
+
                               /////////////
                               // Methods //
                               /////////////
 void setup() {
-  //fullScreen();
   size(1280, 720);
   frameRate(60);
   initConfiguration();
-  background = loadImage("bg.jpg");
-  //nextScreen = false;
+  firstImage = loadImage("bg.jpg");
   distance = 0;
-  
+  algorithm = false;
+  box2d = new Box2DProcessing(this);
+  box2d.createWorld();
+  iterator = 0;
+  iterPopulation = 20;
+  population = new ArrayList(iterPopulation);
 }
 
-void draw() {
-  if (algorithm == false){
-    image(background, 0, 0);
+void draw(){
+  if(b.isPressed() == false){
+    image(firstImage, 0, 0);
     fill(255);
   }
   else{
-    showAlgorithm();
-    surface.drawMap();
+    
+    begin();
+    image(firstImage, 0, 0);  
+  }
+  if (algorithm == true){
+    surface.display();
+    surface.makeBody();
     
   }
 }
+
+void update(){}
+
 
 void initConfiguration(){
   PFont font = createFont("Arial", 25);
@@ -69,23 +85,38 @@ void initConfiguration(){
     .setAutoClear(false)
     .setColorBackground(color(128));
   
-  control.addButton("Continue")
+  b = control.addButton("Continue")
     .setPosition(width-250, height-100)
     .setSize(200,50)
     .setFont(font)
     .setColorBackground(color(154))
-    .setColorForeground(color(54));
-    
-       
+    .setColorForeground(color(54))
+    .setValue(0)
+    .setUserInteraction(true);
+  
+  ;
 }
-
-void showAlgorithm(){
+void begin(){
   distance = int(controlDistance.getText());
   generations = int(controlGenerations.getText());
-  //surface = new Map(distance, 0, 0, 0);
-  
-  /*control.get("Distance").hide();
-  control.get("Generations").hide();
-  control.get("Continue").hide();
-  algorithm = true;*/
+  if (distance > 0 || generations > 0){
+    control.get("Distance").hide();
+    control.get("Generations").hide();
+    control.get("Continue").hide();
+   
+    firstImage = loadImage("morImg.jpg");
+    surface = new Map(distance, color(76,153,0), color(51,102,0));
+    algorithm = true;
+  }
+  else{
+    algorithm = false;
+  } 
+}
+
+
+void createPopulation(){
+  for (int i = 0; i < iterPopulation; i++){
+    Car carry = new Car(this.generations);
+    population.add(carry);
+  }
 }
