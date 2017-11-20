@@ -4,6 +4,7 @@ class Car {
                           //////////////
   private CarDNA dna;
   private ArrayList<CarDNA> generation;
+  ParticleSystem systems;
   private CarBody body;
   private PVector startingPos;
   private boolean flipped;  
@@ -18,12 +19,17 @@ class Car {
                           ///////////////
                           
   Car(int generations){
+    this.minWidth = 100;
+    this.maxWidth = 300;
+    this.minHeight = 100;
+    this.maxHeight = 300;
     this.startingPos = new PVector(45,100);
     this.generations = 0;
     this.generation = new ArrayList(generations);
     fitness = 0;
     coveredDistance = 0;
     this.randomGene();
+    
   }    
   
   void randomGene(){
@@ -69,5 +75,33 @@ class Car {
   }
 
 
-  void display(){}
-}
+  void display(){
+    body.display(); 
+    //firstWheel.display();
+    //secondWheel.display();
+  }
+  
+  void updateSystem(){
+       
+    body.update();
+    /*for(int i=0;i<5;i++){
+      systems.addParticle();
+    }
+      
+    
+    for(Particle s : systems.particles){
+      if(!s.isDead()){
+        s.applyForce(new PVector(0,  -0.1));
+        s.applyForce(new PVector(-0.09,-0.001));
+        //s.ang= body.body.
+        //s.lifeSpan=humo;
+     
+    }
+
+    if(body.onMovement()==false){
+      Vec2 pos = box2d.getBodyPixelCoord(body.body);
+      systems.origin=(new PVector(pos.x-20,pos.y));
+      systems.update();
+      systems.draw();*/
+    }
+  }

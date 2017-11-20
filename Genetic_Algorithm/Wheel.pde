@@ -21,4 +21,6 @@ class Wheel{
   PVector getPos(){
     return center;
   }
+  
+  void display(){}
 }

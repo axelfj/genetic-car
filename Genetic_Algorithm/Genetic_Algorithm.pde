@@ -57,7 +57,9 @@ void draw(){
   if (algorithm == true){
     surface.display();
     surface.makeBody();
-    population.get(0);
+    population.get(0).display();
+    population.get(0).updateSystem();
+    
   }
 }
 
@@ -90,7 +92,6 @@ void initConfiguration(){
     .setValue(0)
     .setUserInteraction(true);
   
-  ;
 }
 void begin(){
   distance = int(controlDistance.getText());
